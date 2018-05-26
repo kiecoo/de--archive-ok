@@ -1,4 +1,4 @@
-//[Q4]step4_add loadData[Q4] error:map/el undefined after adding loadData
+//success[Ans4-1]by:loadData(null, data))
 <!doctype html>
 <html>
   <head>
@@ -192,7 +192,7 @@
           console.log(`github responded with "${code}", so let's fetch a lot of data :-)`)
           //var el = getGithubData (next)	
 	  //fx_done(el)
-	  getGithubData(loadData)	
+	  getGithubData(data => loadData(null, data)) 	
         }
 	     
         function loadData (error, data) {
@@ -280,7 +280,7 @@
 	fy_next(data1)
       }	    
 	    	    
-      profile(done)
+      profile(data => done(null, data)) 
       // function done (el) { document.body.appendChild(el) }          
       function done (error, el) {
         if (error) return console.error(error) // or `document.body.innerHTML = `<h1>${error}</h1>`
@@ -289,4 +289,3 @@
     </script>
   </body>
 </html>
-
